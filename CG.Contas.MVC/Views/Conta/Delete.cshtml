@@ -1,0 +1,29 @@
+@model CG.Contas.MVC.Models.ContaViewModel
+@{
+    ViewData["Title"] = "Adicionar Conta";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DeleteConfirm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <h2>Confirma Exclusão dos dados abaixo?</h2>
+            <ul>
+                <li>@Model.Id</li>
+                <li>@Model.Nome</li>
+                <li>@Model.Descricao</li>
+            </ul>
+            <div class="form-group">
+                <input type="submit" value="Confirma Exclusão" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

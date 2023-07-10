@@ -7,10 +7,10 @@ namespace CG.Contas.API.Models
 {
     public class Conta
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
 
-        public string Nome { get; set; }
+        public string Nome { get; set; } = string.Empty;
 
-        public string Descricao { get; set; }
+        public string Descricao { get; set; } = string.Empty;
     }
 }

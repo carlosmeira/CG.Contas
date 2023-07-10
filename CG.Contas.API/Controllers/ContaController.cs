@@ -23,7 +23,7 @@ namespace CG.Contas.API.Controllers
         public async Task<IActionResult> GetAll()
         {
             var result = await _service.GetAll();
-            if (result.Count == 0) return NoContent();
+            //if (result.Count == 0) return new List<Conta>();
             return Ok(result);
         }
 

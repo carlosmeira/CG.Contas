@@ -45,7 +45,7 @@ namespace CG.Contas.API.Services.ContaService
             var conta = await _context.Conta.FindAsync(id);
             return conta;
         }
-        
+    
         public async Task<List<Conta>> Update(Guid id, Conta conta)
         {
             var _conta = await _context.Conta.FindAsync(id);
