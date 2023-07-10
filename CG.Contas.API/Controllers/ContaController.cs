@@ -47,14 +47,18 @@ namespace CG.Contas.API.Controllers
         [Route("{id}")]
         public async Task<IActionResult> Update(Guid id, Conta conta)
         {
-            return Ok();
+            var result = await _service.Update(id, conta);
+            if (result is null) return NotFound("Conta Inexistente.");
+            return Ok(result);
         }
 
         [HttpDelete]
         [Route("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
-            return Ok();
+            var result = await _service.Delete(id);
+            if (result is null) return NotFound("Conta Inexistente.");
+            return Ok(result);
         }
 
     }

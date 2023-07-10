@@ -23,9 +23,15 @@ namespace CG.Contas.API.Services.ContaService
             return await _context.Conta.ToListAsync();
         }
 
-        public Task<List<Conta>> Delete(Guid id)
+        public async Task<List<Conta>> Delete(Guid id)
         {
-            throw new NotImplementedException();
+            var _conta = await _context.Conta.FindAsync(id);
+            if (_conta is null) return null;
+
+            _context.Conta.Remove(_conta);
+            await _context.SaveChangesAsync();
+
+            return await _context.Conta.ToListAsync();
         }
 
         public async Task<List<Conta>> GetAll()
@@ -38,12 +44,19 @@ namespace CG.Contas.API.Services.ContaService
         {
             var conta = await _context.Conta.FindAsync(id);
             return conta;
-
         }
 
-        public Task<List<Conta>> Update(Guid id, Conta conta)
+        public async Task<List<Conta>> Update(Guid id, Conta conta)
         {
-            throw new NotImplementedException();
+            var _conta = await _context.Conta.FindAsync(id);
+            if (_conta is null) return null;
+
+            _conta.Nome = conta.Nome;
+            _conta.Descricao = conta.Descricao;
+
+            await _context.SaveChangesAsync();
+
+            return await _context.Conta.ToListAsync();
         }
     }
 }
