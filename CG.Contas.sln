@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CG.Contas.API", "CG.Contas.API\CG.Contas.API.csproj", "{D62B2CD1-FAC7-4190-8100-33EA507EBEDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CG.Contas.MVC", "CG.Contas.MVC\CG.Contas.MVC.csproj", "{3545054A-5FA0-4BF4-8349-7482AFB27074}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CG.Contas.Test", "CG.Contas.Test\CG.Contas.Test.csproj", "{F85BDD6D-E7A4-4E56-BEDA-3C970787F026}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D62B2CD1-FAC7-4190-8100-33EA507EBEDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D62B2CD1-FAC7-4190-8100-33EA507EBEDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D62B2CD1-FAC7-4190-8100-33EA507EBEDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D62B2CD1-FAC7-4190-8100-33EA507EBEDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3545054A-5FA0-4BF4-8349-7482AFB27074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3545054A-5FA0-4BF4-8349-7482AFB27074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3545054A-5FA0-4BF4-8349-7482AFB27074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3545054A-5FA0-4BF4-8349-7482AFB27074}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F85BDD6D-E7A4-4E56-BEDA-3C970787F026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F85BDD6D-E7A4-4E56-BEDA-3C970787F026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F85BDD6D-E7A4-4E56-BEDA-3C970787F026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F85BDD6D-E7A4-4E56-BEDA-3C970787F026}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
