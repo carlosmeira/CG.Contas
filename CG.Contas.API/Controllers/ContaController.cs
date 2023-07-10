@@ -22,20 +22,25 @@ namespace CG.Contas.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            return Ok();
+            var result = await _service.GetAll();
+            if (result.Count == 0) return NoContent();
+            return Ok(result);
         }
 
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
-            return Ok();
+            var result = await _service.GetById(id);
+            if (result is null) return NotFound("Conta Inexistente.");
+            return Ok(result);
         }
 
         [HttpPost]
         public async Task<IActionResult> Add(Conta conta)
         {
-            return Ok();
+            var result = await _service.Add(conta);
+            return Ok(result);
         }
 
         [HttpPut]

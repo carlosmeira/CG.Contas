@@ -2,15 +2,25 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CG.Contas.API.Data;
 using CG.Contas.API.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CG.Contas.API.Services.ContaService
 {
     public class ContaService : IContaService
     {
-        public Task<List<Conta>> Add(Conta conta)
+        private readonly DataContext _context;
+        public ContaService(DataContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+
+        public async Task<List<Conta>> Add(Conta conta)
+        {
+            _context.Conta.Add(conta);
+            await _context.SaveChangesAsync();
+            return await _context.Conta.ToListAsync();
         }
 
         public Task<List<Conta>> Delete(Guid id)
@@ -18,14 +28,17 @@ namespace CG.Contas.API.Services.ContaService
             throw new NotImplementedException();
         }
 
-        public Task<List<Conta>> GetAll()
+        public async Task<List<Conta>> GetAll()
         {
-            throw new NotImplementedException();
+            var conta = await _context.Conta.ToListAsync();
+            return conta;
         }
 
-        public Task<Conta> GetById(Guid id)
+        public async Task<Conta> GetById(Guid id)
         {
-            throw new NotImplementedException();
+            var conta = await _context.Conta.FindAsync(id);
+            return conta;
+
         }
 
         public Task<List<Conta>> Update(Guid id, Conta conta)
